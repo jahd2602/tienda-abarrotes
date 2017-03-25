@@ -8,6 +8,6 @@
  * Controller of the tiendaAbarrotesApp
  */
 angular.module('tiendaAbarrotesApp')
-  .controller('AdminCtrl', function () {
-
+  .controller('AdminCtrl', function ($scope) {
+      $scope.selected = 0;
   });

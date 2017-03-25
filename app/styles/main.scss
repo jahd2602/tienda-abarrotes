@@ -5,6 +5,7 @@ $navbar-default-link-hover-color: #fff;
 $navbar-default-brand-hover-color: #fff;
 $navbar-default-bg: #0ab5ff;
 $navbar-default-toggle-icon-bar-bg: #fff;
+$nav-pills-border-radius: 0;
 
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
@@ -76,9 +77,6 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
 
   /* Remove the padding we set earlier */
   .header,
@@ -87,16 +85,25 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 50px;
-  }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
   }
 }
 
+/* Space out the masthead */
+.header {
+  margin-bottom: 50px;
+}
+
 .navbar-brand {
   font-weight: bold;
+}
+
+.nav-pills > li > a {
+  cursor: pointer;
+}
+
+.nav-pills > li.active > a {
+  cursor: default;
 }

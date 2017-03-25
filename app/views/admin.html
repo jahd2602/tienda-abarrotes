@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <div class="navbar-brand">Administración - Tienda de Abarrotes</div>
+                <div class="navbar-brand">Administración <span class="hidden-xs">- Tienda de Abarrotes</span></div>
             </div>
 
             <div class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -27,74 +27,194 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
 
     <div class="row">
         <div class="col-sm-3 col-md-2">
             <div class="row">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active">
-                        <a href="#">Principal</a>
+                    <li ng-class="{'active': selected==0}">
+                        <a ng-click="selected = 0">Principal</a>
+                    </li>
+                    <li ng-class="{'active': selected==1}">
+                        <a ng-click="selected = 1">Órdenes</a>
+                    </li>
+                    <li ng-class="{'active': selected==2}">
+                        <a ng-click="selected = 2">Productos</a>
                     </li>
                     <li>
-                        <a href="#">Órdenes</a>
+                        <a href="">Proveedores</a>
                     </li>
                     <li>
-                        <a href="#">Productos</a>
+                        <a href="">Personal</a>
                     </li>
                     <li>
-                        <a href="#">Proveedores</a>
-                    </li>
-                    <li>
-                        <a href="#">Personal</a>
-                    </li>
-                    <li>
-                        <a href="#">Reportes</a>
+                        <a href="">Reportes</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="col-sm-9 col-md-10" style="min-height: 800px;background: #f3f3f3">
-            <div class="panel panel-default" style="margin-top: 20px;">
-                <div class="panel-body" style="color:white;background: black">
-                    <h3>Ingresos estimados</h3>
-                    <div class="col-24">
+            <div ng-show="selected==0">
+                <div class="panel panel-default" style="margin-top: 20px;">
+                    <div class="panel-body" style="color:white;background: black">
+                        <h3>Ingresos estimados</h3>
+                        <div class="col-xs-24">
 
-                        <div class="row">
-                            <div class="col-xs-3">
-                                Hoy hasta ahora
-                                <h1>S/ 53</h1>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-3">
+                                    Hoy hasta ahora
+                                    <h1>S/ 53</h1>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    Ayer
+                                    <h1>S/ 151</h1>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    Últimos 7 días
+                                    <h1>S/ 659</h1>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    Este mes
+                                    <h1>S/ 1653</h1>
+                                </div>
                             </div>
-                            <div class="col-xs-3">
-                                Ayer
-                                <h1>S/ 151</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h3 style="margin-bottom: 250px;">Gráficas</h3>
                             </div>
-                            <div class="col-xs-3">
-                                Últimos 7 días
-                                <h1>S/ 659</h1>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h3 style="margin-bottom: 250px;">Gráficas</h3>
                             </div>
-                            <div class="col-xs-3">
-                                Este mes
-                                <h1>S/ 1653</h1>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h3 style="margin-bottom: 200px;">Gráficas</h3>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h3 style="margin-bottom: 400px;">Gráficas</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h3>Gráficas</h3>
+            <div ng-show="selected==1">
+                <div class="panel panel-default" style="margin-top: 20px;">
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="active"><a href="">Pendientes</a></li>
+                            <li role="presentation"><a href="">Despachadas</a></li>
+                            <li role="presentation"><a href="">Todas</a></li>
+                        </ul>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Cant. Productos</th>
+                                    <th>Total</th>
+                                    <th>Estado</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark Otto</td>
+                                    <td>hace 23 minutos</td>
+                                    <td>5</td>
+                                    <td>S/ 21.50</td>
+                                    <td class="text-warning">Pendiente</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob Thornton</td>
+                                    <td>hace 2 horas</td>
+                                    <td>1</td>
+                                    <td>S/ 24.00</td>
+                                    <td class="text-warning">Pendiente</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry Jhonson</td>
+                                    <td>hace 3 horas</td>
+                                    <td>15</td>
+                                    <td>S/ 109.90</td>
+                                    <td class="text-warning">Pendiente</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
                 </div>
-                <div class="col-xs-6">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h3>Gráficas</h3>
+            </div>
+            <div ng-show="selected==2">
+                <div class="panel panel-default" style="margin-top: 20px;">
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="active"><a href="">Sin stock</a></li>
+                            <li role="presentation"><a href="">Con stock</a></li>
+                            <li role="presentation"><a href="">Todas</a></li>
+                        </ul>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Marca</th>
+                                    <th>Proveedor</th>
+                                    <th>Precio unitario</th>
+                                    <th>Stock</th>
+                                    <th>Estado</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Paquete de Galletas x1 u.</td>
+                                    <td>Oreo</td>
+                                    <td>Distribuidor de Galletas S.A.</td>
+                                    <td>S/ 0.80</td>
+                                    <td>0</td>
+                                    <td class="text-danger">Sin stock</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jugo 1 lt.</td>
+                                    <td>Frugos</td>
+                                    <td>Distribuidor de Jugos S.A.</td>
+                                    <td>S/ 3.20</td>
+                                    <td>0</td>
+                                    <td class="text-danger">Sin stock</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Paquete de Galletas x6 u.</td>
+                                    <td>Oreo</td>
+                                    <td>Distribuidor de Galletas S.A.</td>
+                                    <td>S/ 0.80</td>
+                                    <td>0</td>
+                                    <td class="text-danger">Sin stock</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
